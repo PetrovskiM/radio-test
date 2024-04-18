@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RadioTest</string>
+    <string name="player_now_playing">Now Playing</string>
+</resources>
