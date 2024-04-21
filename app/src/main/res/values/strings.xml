@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">RadioTest</string>
+    <string name="app_name">Radio</string>
     <string name="player_now_playing">Now Playing</string>
+    <string name="radio">Radio</string>
+    <string name="schedule">Schedule</string>
 </resources>

@@ -13,7 +13,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -75,14 +77,16 @@ fun PlayerScreenContent(
     val glow = MaterialTheme.colorScheme.primary.copy(alpha = GLOW_ALPHA)
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = CenterHorizontally
     ) {
         HeadlineMedium(
             modifier = Modifier.padding(top = SpaceXXLarge),
             text = R.string.player_now_playing,
         )
-        Spacer(modifier = Modifier.fillMaxSize(TOP_SPACER_FRACTION))
+        Spacer(modifier = Modifier.height(TOP_SPACER.dp))
         GlowCard(
             glowColor = glow,
             glowRadius = GLOW_RADIUS,
@@ -173,6 +177,5 @@ private fun MediaControls(
 private const val IMAGE_SIZE_FRACTION = 1.5
 private const val GLOW_RADIUS = 120f
 private const val GLOW_ALPHA = 0.6f
-private const val TOP_SPACER_FRACTION = 0.13f
-private const val BOTTOM_SPACER_FRACTION = 0.3f
+private const val TOP_SPACER = 100
 private const val BORDER_WIDTH = 6

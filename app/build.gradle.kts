@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.androidx.media3.exoplayer)
     implementation(libs.androidx.media3.ui)
+    implementation(libs.androidx.splashscreen)
     implementation(libs.hilt)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
