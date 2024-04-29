@@ -3,4 +3,6 @@
     <string name="player_now_playing">Now Playing</string>
     <string name="radio">Radio</string>
     <string name="schedule">Schedule</string>
+    <string name="schedule_visit">Visit our website</string>
+    <string name="share_app">Christian radio online 24/7, check it out!</string>
 </resources>

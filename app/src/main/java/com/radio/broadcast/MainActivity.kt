@@ -40,7 +40,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private lateinit var mediaController: MediaController
+    private var mediaController: MediaController? = null
     private val viewModel by viewModels<MainViewModel>()
 
     @OptIn(UnstableApi::class)
@@ -78,8 +78,8 @@ class MainActivity : ComponentActivity() {
                         ) {
                             composable(route = TopLevelDestination.Radio.route) {
                                 PlayerScreen(
-                                    mediaControllerPause = { mediaController.pause() },
-                                    mediaControllerPlay = { mediaController.play() },
+                                    mediaControllerPause = { mediaController?.pause() },
+                                    mediaControllerPlay = { mediaController?.play() },
                                 )
                             }
                             composable(route = TopLevelDestination.Schedule.route) {
@@ -115,9 +115,7 @@ class MainActivity : ComponentActivity() {
     }
 
     override fun onDestroy() {
-        if (::mediaController.isInitialized) {
-            mediaController.release()
-        }
+        mediaController?.release()
         super.onDestroy()
     }
 }
